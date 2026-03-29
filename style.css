@@ -1,0 +1,280 @@
+/* --- 1. CONFIGURAÇÕES GERAIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: #f4f6f8;
+    color: #1a1a1a;
+    padding-bottom: 80px;
+}
+
+/* --- 2. NAVEGAÇÃO --- */
+nav {
+    background: #fff;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #25d366;
+}
+
+/* --- 3. STORIES COM MOVIMENTO E ROLAGEM TURBINADA (SEM TRAVAS) --- */
+.marquee-stories-container {
+    width: 100%;
+    background: #fff;
+    padding: 20px 0; /* Aumentei a área de clique */
+    border-bottom: 1px solid #eee;
+    display: flex;
+    overflow-x: auto; /* Permite puxar livremente */
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch; /* Efeito de inércia suave */
+    cursor: grab;
+}
+
+.marquee-stories-container::-webkit-scrollbar {
+    display: none;
+}
+
+.marquee-stories-content {
+    display: flex;
+    gap: 30px; /* Mais espaço para não embolar ao puxar */
+    padding: 0 40px;
+    width: max-content;
+    animation: scroll-stories 28s linear infinite; /* Velocidade profissional */
+}
+
+/* Pausa a animação ao segurar ou passar o mouse */
+.marquee-stories-container:active .marquee-stories-content,
+.marquee-stories-container:hover .marquee-stories-content {
+    animation-play-state: paused;
+}
+
+.marquee-stories-content a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0; /* Impede as bolinhas de amassarem */
+    transition: transform 0.2s;
+}
+
+.marquee-stories-content a:active {
+    transform: scale(0.9);
+}
+
+.story-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #25d366;
+    padding: 3px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.story-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.marquee-stories-content span {
+    font-size: 10px;
+    font-weight: 700;
+    color: #555;
+    text-transform: uppercase;
+}
+
+/* ANIMAÇÃO INFINITA */
+@keyframes scroll-stories {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- 4. BARRA DE CATEGORIAS --- */
+.categories-bar {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.categories-bar::-webkit-scrollbar { display: none; }
+
+.cat-btn {
+    background: #f0f0f0;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: 700;
+    color: #666;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.cat-btn.active {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* --- 5. GRID DE PRODUTOS --- */
+.container {
+    padding: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.info {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.info h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    min-height: 40px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.info p {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-top: auto;
+    margin-bottom: 12px;
+    color: #25d366;
+}
+
+.btn-zap {
+    background: #25d366;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* --- 6. WHATSAPP FLUTUANTE --- */
+.float-zap {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    text-decoration: none;
+    box-shadow: 0 8px 15px rgba(37,211,102,0.3);
+    z-index: 2000;
+}
+
+.pulse { animation: pulse-zap 2s infinite; }
+@keyframes pulse-zap {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* --- 7. RESPONSIVIDADE CELULAR --- */
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .card-img { height: 140px; }
+    .info h3 { font-size: 0.8rem; }
+    .price { font-size: 1.1rem; }
+    .btn-zap { font-size: 0.8rem; padding: 10px; }
+
+    .story-circle { 
+        width: 60px; 
+        height: 60px; 
+    }
+    .marquee-stories-content {
+        gap: 15px;
+        padding: 0 20px;
+    }
+}

@@ -1,0 +1,43 @@
+function fazerPedido(produto, preco) {
+    const telefone = "5582993717863"; 
+    const msg = `Olá Nathan! 👋\nTenho interesse no: *${produto}*\nValor: *R$ ${preco}*`;
+    window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`, "_blank");
+}
+
+function filtrar(cat, btn) {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.card').forEach(card => {
+        if (cat === 'todos' || card.classList.contains(cat)) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Lógica de Prova Social (Gatilho de Confiança)
+const cidades = ["Maceió", "Rio Largo", "Arapiraca", "Marechal", "Pilar", "Palmeira"];
+const acoes = ["acabou de pedir", "comprou", "reservou"];
+
+function mostrarProvaSocial() {
+    const socialProof = document.getElementById('social-proof');
+    const txt = document.getElementById('proof-text');
+    
+    const cidade = cidades[Math.floor(Math.random() * cidades.length)];
+    const acao = acoes[Math.floor(Math.random() * acoes.length)];
+    
+    txt.innerHTML = `Alguém de <b>${cidade}</b> ${acao} um produto!`;
+    
+    socialProof.classList.add('show');
+    
+    setTimeout(() => {
+        socialProof.classList.remove('show');
+    }, 4000);
+}
+
+// Inicia as notificações após 5 segundos e repete a cada 12 segundos
+setTimeout(() => {
+    mostrarProvaSocial();
+    setInterval(mostrarProvaSocial, 12000);
+}, 5000);
