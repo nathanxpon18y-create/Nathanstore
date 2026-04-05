@@ -16,140 +16,123 @@
 
     <div class="marquee-stories-container">
         <div class="marquee-stories-content">
-            <a href="javascript:void(0)" onclick="fazerPedido('Kit Xiaomi 120W', '45,00')">
-                <div class="story-circle"><img src="./img/carregador.webp.png"></div>
-                <span>Xiaomi</span>
-            </a>
-            <a href="javascript:void(0)" onclick="fazerPedido('Power Bank 10k', '75,00')">
-                <div class="story-circle"><img src="./img/Carregador Portátil.webp.webp"></div>
-                <span>Bateria</span>
-            </a>
-            <a href="javascript:void(0)" onclick="fazerPedido('Fone Gaming X15', '45,00')">
-                <div class="story-circle"><img src="./img/X15 Fone De Ouvido para Jogos Bluetooth 5.Tws.webp.webp"></div>
-                <span>Fone X15</span>
-            </a>
-            <a href="javascript:void(0)" onclick="fazerPedido('Iphone 30W Turbo', '40,00')">
-                <div class="story-circle"><img src="./img/Carregador Para Iphone 30W Turbo Tipo C.webp.webp.webp"></div>
-                <span>iPhone</span>
-            </a>
-            <a href="javascript:void(0)" onclick="fazerPedido('Fone Lightning', '25,00')">
-                <div class="story-circle"><img src="./img/Fone de Ouvido entrada lightning para Iphone.webp.webp"></div>
-                <span>Fone iOS</span>
-            </a>
-            <a href="javascript:void(0)" onclick="fazerPedido('Cordão Universal de Nylon', '15,00')">
-                <div class="story-circle"><img src="./img/Cordão Universal de Nylon Para Smartphone Celular - Alça Macia de Pescoço e Pulso.webp.webp"></div>
-                <span>Cordão</span>
-            </a>
-            <a href="javascript:void(0)" onclick="fazerPedido('Suporte Ultrafino', '15,00')">
-                <div class="story-circle"><img src="./img/Suporte Ultrafino De Celular Portátil Dobrável.webp.webp"></div>
-                <span>Suporte</span>
-            </a>
+            <div class="story" onclick="fazerPedido('Xiaomi 120W', '45,00')"><div class="story-circle"><img src="./img/carregador.webp.png"></div><span>Xiaomi</span></div>
+            <div class="story" onclick="fazerPedido('Power Bank', '75,00')"><div class="story-circle"><img src="./img/Carregador Portátil.webp.webp"></div><span>Bateria</span></div>
+            <div class="story" onclick="fazerPedido('Parafusadeira', '100,00')"><div class="story-circle"><img src="./img/kit Parafusadeira1.webp.webp"></div><span>Ferramenta</span></div>
+            <div class="story" onclick="fazerPedido('Fone X15', '45,00')"><div class="story-circle"><img src="./img/X15 Fone De Ouvido para Jogos Bluetooth 5.Tws.webp.webp"></div><span>Fone X15</span></div>
+            <div class="story" onclick="fazerPedido('Xiaomi 120W', '45,00')"><div class="story-circle"><img src="./img/carregador.webp.png"></div><span>Xiaomi</span></div>
+            <div class="story" onclick="fazerPedido('Power Bank', '75,00')"><div class="story-circle"><img src="./img/Carregador Portátil.webp.webp"></div><span>Bateria</span></div>
+            <div class="story" onclick="fazerPedido('Parafusadeira', '100,00')"><div class="story-circle"><img src="./img/kit Parafusadeira1.webp.webp"></div><span>Ferramenta</span></div>
+            <div class="story" onclick="fazerPedido('Fone X15', '45,00')"><div class="story-circle"><img src="./img/X15 Fone De Ouvido para Jogos Bluetooth 5.Tws.webp.webp"></div><span>Fone X15</span></div>
         </div>
     </div>
 
     <div class="categories-bar">
         <button class="cat-btn active" onclick="filtrar('todos', this)">Todos</button>
         <button class="cat-btn" onclick="filtrar('carregadores', this)">Carregadores</button>
-        <button class="cat-btn" onclick="filtrar('power-banks', this)">Power Banks</button>
         <button class="cat-btn" onclick="filtrar('fones', this)">Fones</button>
+        <button class="cat-btn" onclick="filtrar('ferramentas', this)">Ferramentas</button>
         <button class="cat-btn" onclick="filtrar('acessorios', this)">Acessórios</button>
     </div>
 
     <main class="container">
-        <div class="grid">
+        <div class="grid" id="produtos-grid">
             
-            <div class="card carregadores">
-                <div class="card-img"><img src="./img/carregador.webp.png" alt="Xiaomi 120W"></div>
+            <div class="card ferramentas">
+                <div class="card-img">
+                    <img src="./img/kit Parafusadeira1.webp.webp" class="img-principal">
+                    <img src="./img/kit Parafusadeira2.webp.webp" class="img-hover"> 
+                </div>
                 <div class="info">
-                    <h3>Xiaomi 120W GaN Charger Set</h3>
-                    <p>HyperCharge com cabo incluso</p>
-                    <p class="price">R$ 45,00</p>
-                    <button class="btn-zap" onclick="fazerPedido('Xiaomi 120W', '45,00')">
-                        <i class="fab fa-whatsapp"></i> Pedir Agora
-                    </button>
+                    <h3>Kit Parafusadeira 48 Peças</h3>
+                    <p class="price">R$ 100,00</p>
+                    <button class="btn-zap" onclick="fazerPedido('Parafusadeira', '100,00')">Pedir Agora</button>
                 </div>
             </div>
 
-            <div class="card power-banks">
-                <div class="card-img"><img src="./img/Carregador Portátil.webp.webp" alt="Power Bank"></div>
+            <div class="card carregadores">
+                <div class="card-img">
+                    <img src="./img/carregador.webp.png" class="img-principal">
+                    <img src="./img/carregador.webp.png" class="img-hover">
+                </div>
+                <div class="info">
+                    <h3>Xiaomi 120W GaN Charger</h3>
+                    <p class="price">R$ 45,00</p>
+                    <button class="btn-zap" onclick="fazerPedido('Xiaomi 120W', '45,00')">Pedir Agora</button>
+                </div>
+            </div>
+
+            <div class="card carregadores">
+                <div class="card-img">
+                    <img src="./img/Carregador Portátil.webp.webp" class="img-principal">
+                    <img src="./img/Carregador Portátil.webp.webp" class="img-hover">
+                </div>
                 <div class="info">
                     <h3>Power Bank Ultra Turbo 10k</h3>
-                    <p>Leve, potente e carga rápida</p>
                     <p class="price">R$ 75,00</p>
-                    <button class="btn-zap" onclick="fazerPedido('Power Bank 10k', '75,00')">
-                        <i class="fab fa-whatsapp"></i> Pedir Agora
-                    </button>
+                    <button class="btn-zap" onclick="fazerPedido('Power Bank 10k', '75,00')">Pedir Agora</button>
                 </div>
             </div>
 
             <div class="card fones">
-                <div class="card-img"><img src="./img/X15 Fone De Ouvido para Jogos Bluetooth 5.Tws.webp.webp" alt="Fone X15"></div>
+                <div class="card-img">
+                    <img src="./img/X15 Fone De Ouvido para Jogos Bluetooth 5.Tws.webp.webp" class="img-principal">
+                    <img src="./img/X15 Fone De Ouvido para Jogos Bluetooth 5.Tws.webp.webp" class="img-hover">
+                </div>
                 <div class="info">
-                    <h3>Fone Gaming X15 TWS RGB</h3>
-                    <p>Baixa latência para jogos e LED</p>
+                    <h3>Fone Gaming X15 TWS</h3>
                     <p class="price">R$ 45,00</p>
-                    <button class="btn-zap" onclick="fazerPedido('Fone X15', '45,00')">
-                        <i class="fab fa-whatsapp"></i> Pedir Agora
-                    </button>
+                    <button class="btn-zap" onclick="fazerPedido('Fone X15', '45,00')">Pedir Agora</button>
                 </div>
             </div>
 
             <div class="card fones">
-                <div class="card-img"><img src="./img/Fone de Ouvido entrada lightning para Iphone.webp.webp" alt="Fone iPhone"></div>
+                <div class="card-img">
+                    <img src="./img/Fone de Ouvido entrada lightning para Iphone.webp.webp" class="img-principal">
+                    <img src="./img/Fone de Ouvido entrada lightning para Iphone.webp.webp" class="img-hover">
+                </div>
                 <div class="info">
                     <h3>Fone Lightning para iPhone</h3>
-                    <p>Conector direto (não precisa Bluetooth)</p>
                     <p class="price">R$ 25,00</p>
-                    <button class="btn-zap" onclick="fazerPedido('Fone iPhone', '25,00')">
-                        <i class="fab fa-whatsapp"></i> Pedir Agora
-                    </button>
-                </div>
-            </div>
-
-            <div class="card carregadores">
-                <div class="card-img"><img src="./img/Carregador Para Iphone 30W Turbo Tipo C.webp.webp.webp" alt="Carregador iPhone"></div>
-                <div class="info">
-                    <h3>Carregador iPhone 30W Turbo</h3>
-                    <p>Carga rápida (iPhone 7 ao 14)</p>
-                    <p class="price">R$ 40,00</p>
-                    <button class="btn-zap" onclick="fazerPedido('Iphone 30W', '40,00')">
-                        <i class="fab fa-whatsapp"></i> Pedir Agora
-                    </button>
+                    <button class="btn-zap" onclick="fazerPedido('Fone iPhone', '25,00')">Pedir Agora</button>
                 </div>
             </div>
 
             <div class="card acessorios">
-                <div class="card-img"><img src="./img/Cordão Universal de Nylon Para Smartphone Celular - Alça Macia de Pescoço e Pulso.webp.webp" alt="Cordão Nylon"></div>
+                <div class="card-img">
+                    <img src="./img/Mini Bolsa Portátil Com Ziper.webp.webp" class="img-principal">
+                    <img src="./img/Mini Bolsa Portátil Com Ziper.webp.webp" class="img-hover">
+                </div>
                 <div class="info">
-                    <h3>Cordão Universal de Nylon</h3>
-                    <p>Alça Macia de Pescoço e Pulso</p>
+                    <h3>Mini Bolsa Portátil com Zíper</h3>
                     <p class="price">R$ 15,00</p>
-                    <button class="btn-zap" onclick="fazerPedido('Cordão Universal de Nylon', '15,00')">
-                        <i class="fab fa-whatsapp"></i> Pedir Agora
-                    </button>
+                    <button class="btn-zap" onclick="fazerPedido('Mini Bolsa', '15,00')">Pedir Agora</button>
                 </div>
             </div>
 
             <div class="card acessorios">
-                <div class="card-img"><img src="./img/Suporte Ultrafino De Celular Portátil Dobrável.webp.webp" alt="Suporte Celular"></div>
+                <div class="card-img">
+                    <img src="./img/Suporte Ultrafino De Celular Portátil Dobrável.webp.webp" class="img-principal">
+                    <img src="./img/Suporte Ultrafino De Celular Portátil Dobrável.webp.webp" class="img-hover">
+                </div>
                 <div class="info">
                     <h3>Suporte Ultrafino De Celular</h3>
-                    <p>Portátil e resistente para o dia a dia</p>
                     <p class="price">R$ 15,00</p>
-                    <button class="btn-zap" onclick="fazerPedido('Suporte Ultrafino', '15,00')">
-                        <i class="fab fa-whatsapp"></i> Pedir Agora
-                    </button>
+                    <button class="btn-zap" onclick="fazerPedido('Suporte Ultrafino', '15,00')">Pedir Agora</button>
                 </div>
             </div>
 
-             <div class="card acessorios">
-                <div class="card-img"><img src="./img/Mini Bolsa Portátil Com Ziper.webp.webp" alt="Mini Bolsa Portátil"></div>
+            <div class="card acessorios">
+                <div class="card-img">
+                    <img src="./img/Cordão Universal de Nylon Para Smartphone Celular - Alça Macia de Pescoço e Pulso.webp.webp" class="img-principal">
+                    <img src="./img/Cordão Universal de Nylon Para Smartphone Celular - Alça Macia de Pescoço e Pulso.webp.webp" class="img-hover">
+                </div>
                 <div class="info">
-                    <h3>Mini Bolsa Portátil Com Ziper</h3>
-                    <p>Mini Bolsa Portátil Com Ziper Transparente</p>
+                    <h3>Cordão Universal de Nylon</h3>
                     <p class="price">R$ 15,00</p>
-                    <button class="btn-zap" onclick="fazerPedido('Mini Bolsa Portátil Com Ziper Transparente', '15,00')">
-                        <i class="fab fa-whatsapp"></i> Pedir Agora
+                    <button class="btn-zap" onclick="fazerPedido('Cordão Nylon', '15,00')">Pedir Agora</button>
+                </div>
+            </div>
 
         </div>
     </main>
@@ -159,22 +142,25 @@
     </a>
 
     <script>
-        function fazerPedido(produto, preco) {
-            const telefone = "5582993717863"; 
-            const msg = `Olá Nathan! 👋\nTenho interesse no: *${produto}*\nValor: *R$ ${preco}*`;
-            window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`, "_blank");
-        }
+        function filtrar(categoria, botao) {
+            const botoes = document.querySelectorAll('.cat-btn');
+            botoes.forEach(btn => btn.classList.remove('active'));
+            botao.classList.add('active');
 
-        function filtrar(cat, btn) {
-            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            document.querySelectorAll('.card').forEach(card => {
-                if (cat === 'todos' || card.classList.contains(cat)) {
-                    card.style.display = 'flex';
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                if (categoria === 'todos' || card.classList.contains(categoria)) {
+                    card.style.display = "flex";
                 } else {
-                    card.style.display = 'none';
+                    card.style.display = "none";
                 }
             });
+        }
+
+        function fazerPedido(produto, preco) {
+            const tel = "5582993717863";
+            const msg = `Olá Nathan! 👋\nTenho interesse no: *${produto}*\nValor: *R$ ${preco}*`;
+            window.open(`https://wa.me/${tel}?text=${encodeURIComponent(msg)}`, "_blank");
         }
     </script>
 </body>
